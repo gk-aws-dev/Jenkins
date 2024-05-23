@@ -27,3 +27,29 @@ select  - require – save.
 
 ![image](https://github.com/gk-aws-dev/Jenkins/assets/154478305/e4370073-ef57-42e5-96f6-14b1cb7634a2)
 
+-------------
+
+## How to create the slave agent with JNLP method:
+
+```
+Manage Jenkins – name – permanent agent – remote root directory (/opt/Jenkins-jnlp – here we can run the agent.jar file)
+– usage (use this node as much as possible) – launch method (launch agent) – availability – save.
+```
+
+- now open the port
+```
+Manage Jenkins – security - agent – TCP port for inbound agents – random (just need to select the port at random as we don’t know the port of the agent)
+```
+
+- Then click on the node – and download and run the agent file in the above root directory.
+- we have to execute like the similar command (you can find the below command when you clicked on the slave)
+
+```
+curl -sO http://3.82.171.89:8080/jenkins/jnlpJars/agent.jar
+java -jar agent.jar -url http://3.82.171.89:8080/jenkins/ -secret bd733e16c4f8edd247e9d4a4113b808d24ddd45ef9d41a006c6f03bc0385e045 -name "jnlp-new" -workDir "/opt/jenkins-jnlp"
+```
+
+(java should be install on the servers before giving above command)
+
+then we must check the agent port and need to change it as fixed as below -> Manage Jenkins – security - agent – TCP port for inbound agents – fixed – port.
+
