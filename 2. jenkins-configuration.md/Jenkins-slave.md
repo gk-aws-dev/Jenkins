@@ -24,3 +24,6 @@ select  - require – save.
 
 
 ![image](https://github.com/gk-aws-dev/Jenkins/assets/154478305/560818e7-588d-4410-bebe-dc0e67f86108)
+
+![image](https://github.com/gk-aws-dev/Jenkins/assets/154478305/e4370073-ef57-42e5-96f6-14b1cb7634a2)
+
